@@ -13,7 +13,7 @@
 const headerParent = document.querySelector('.header-container');
 headerParent.appendChild(Header('SMARCH 28, 2019', 'Lambda Times', '98°'));
 
-function Header() {
+function Header(headerInfo) {
 
     // Defining Variables
 
@@ -24,9 +24,9 @@ function Header() {
 
     // Element Structure
 
-    head.appendChild(headSpan);
-    head.appendChild(headH1);
-    head.appendChild(hSpanClass);
+    headR.appendChild(headSpan);
+    headR.appendChild(headH1);
+    headR.appendChild(hSpanClass);
 
     // Target Classes
 
@@ -37,7 +37,7 @@ function Header() {
 
     // Heres the textContext
 
-    headSpan.textContent = 'SMARCH 28, 2019';
+    headSpan.textContent = 'MARCH 28, 2019';
     headH1.textContext = 'Lambda Times';
     hSpanClass = '98°';
 
