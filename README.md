@@ -30,20 +30,31 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+<!-- The DOM is short for Document Object Model. The DOM represents the document you're working on usually consisting of the HTML structure. Think of it as a tree with the HTML at the top and branching off into the head and body and then inside of that comes the children elements.  -->
+
 2. What is an event?
+
+<!-- An event is something that happens to the HTML elements. In JS you can react to these events with a listener to have it respond to whatever action you choose to place it on. -->
 
 3. What is an event listener?
 
+<!-- An event listener is something you add in js so that you can functionality or an action when a user does something in the DOM. Things like click, hover and scroll are examples of things you can add an event listener to so that you can change the color of something, add an alert and many other methods you can think of. -->
+
 4. Why would we convert a NodeList into an Array?
+
+<!-- I'm not too sure about this one. I'm going to guess anyway and say that you can use methods like forEach and Map so that you can iterate over the data and manipulate it like you would any other array. I hope i'm close but i bet a scuffed it somewhere. -->
 
 5. What is a component?
 
+<!-- It's basically reusable code made up of HTML, CSS and JS so that you can manipulate whichever DOM you're working on. This reusable code makes it easier to make more complex actions function while writing less code overall which means less bugs and less time.  -->
+
+
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [X] Fork the project into your GitHub user account
+* [X] Clone the forked project into a directory on your machine
+* [nah] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [X] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
