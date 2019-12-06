@@ -9,6 +9,10 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
+// Parental things
+const headerParent = document.querySelector('.header-container');
+headerParent.appendChild(Header('SMARCH 28, 2019', 'Lambda Times', '98°'));
+
 function Header() {
 
     // Defining Variables
