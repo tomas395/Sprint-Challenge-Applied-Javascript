@@ -18,56 +18,59 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
-const parentArticle = document.querySelector('.cards-container')
+     .then(response => {
+         console.log("Fetched!", response);
+         Object.values(response.data.articles).forEach(item => {
+             item.forEach(item => {
+                 let cards = document.querySelector('.cards-container');
+                 cards.appendChild(createArticle(item));
+                })
+            })
+        }) 
+        
+        .catch(err => {
+            console.log("Error: The data was not returned!", err);
+        })
 
-   axios
-  .get ("https://lambda-times-backend.herokuapp.com/articles")
-  
-  .then(res => {
-      console.log("Fetched!".res);
-    // ill need a forEach here
-  });
+ function createArticle(article) {
+        // The Main Variables 
 
-  .catch(err => {
-    console.log("Error: The data was not returned!", err);
-  });
+        const card = document.createElement('div');
+        const headline = document.createElement('div');
+        const author = document.createElement('div');
+        const imgContainer = document.createElement('div');
+        const img = document.createElement('img');
+        const span = document.createElement('span');
 
-function artCreator(artInfo) {
+        // Add Classes
+        card.classList.add('card');
+        headline.classList.add('headline');
+        author.classList.add('author');
+        imgContainer.classList.add('img-container');
+        span.classList.add('span');
 
-// The Main Variables
-const artCard = document.createElement('div');
-const artHeadline = document.createElement('div');
-const newAuthor = document.createElement('div');
-const imgCont = document.createElement('div');
-const authorImg = document.createElement('img');
-const authorSpan = document.createElement('span');
+        // Article textContent
+        headline.textContent = article.headline;
+        img.src = article.authorPhoto;
+        span.textContent = `By ${article.authorName}`;
+        
 
-// Add Classes
+        // Element Structure 
+        card.appendChild(headline);
+        card.appendChild(author);
+        author.appendChild(imgContainer);
+        imgContainer.appendChild(img);
+        card.appendChild(span);
 
-artCard.classList.add('card');
-artCard.classList.add('headline');
-artCard.classList.add('author');
-artCard.classList.add('img-container');
-artCard.classList.add('img');
-artCard.classList.add('span');
+// ↓↓↓ DONT FORGET TO RETURN THE CARD ↓↓↓
+            return card;
+        }
 
-// Element Structure
 
-articleHeadline.appendChild(artCard);
-newAuthor.appendChild(artCard);
-imgCont.appendChild(newAuthor);
-authorImg.appendChild(imgCont);
-authorSpan.appendChild(artCard);
 
-// Article textContent
 
-articleHeadline.textContent = artInfo.headline;
-authorImg.src = artInfo.authorPhoto;
-newAuthor.textContent = artInfo.authorName;
-
-return artCard;
-}
 
 
 

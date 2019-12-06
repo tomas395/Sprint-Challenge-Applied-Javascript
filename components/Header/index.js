@@ -10,36 +10,40 @@
 // And add it to the DOM in the .header-container component
 
 // Parental things
+
 const headerParent = document.querySelector('.header-container');
-headerParent.appendChild(Header('SMARCH 28, 2019', 'Lambda Times', '98°'));
+const headerInfo = Header();
+headerParent.appendChild(headerInfo);
 
-function Header(headerInfo) {
+function Header(){
 
-    // Defining Variables
+    // The Main Variables
+    const headR = document.createElement('div');
+    const headSpan = document.createElement('span');
+    const headH1 = document.createElement('h1');
+    const hSpanClass = document.createElement('span');
 
-    const headR = document.createElement ('div');
-    const headSpan = document.createElement ('span');
-    const headH1 = document.createElement ('h1');
-    const hSpanClass = document.createElement ('span');
-
-    // Element Structure
-
+    // Element Structure 
     headR.appendChild(headSpan);
     headR.appendChild(headH1);
     headR.appendChild(hSpanClass);
 
-    // Target Classes
-
+    // Add Classes
     headR.classList.add('header');
     headSpan.classList.add('date');
-    headH1.classList.add('h1');
     hSpanClass.classList.add('temp');
 
-    // Heres the textContext
-
+    // Header textContent
     headSpan.textContent = 'MARCH 28, 2019';
-    headH1.textContext = 'Lambda Times';
-    hSpanClass = '98°';
+    headH1.textContent = 'Lambda Times';
+    hSpanClass.textContent = '98°';
 
-    return headR
+// ↓↓↓ DONT FORGET TO RETURN THE HEADER ↓↓↓
+    return headR;
 }
+
+
+
+ 
+
+
